@@ -1,4 +1,4 @@
-# [Silver IV] 스택 - 10828 
+### [Silver IV] 스택 - 10828 
 
 [문제 링크](https://www.acmicpc.net/problem/10828) 
 
