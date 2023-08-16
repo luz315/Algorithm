@@ -1,13 +1,13 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 public class Main{
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		long a = Long.valueOf(st.nextToken() + st.nextToken());
-		long b = Long.valueOf(st.nextToken() + st.nextToken());
+        String spt[] = br.readLine().split(" ");
         
-		System.out.println(a + b);
+        long a = Long.parseLong(spt[0]+spt[1]);
+        long b = Long.parseLong(spt[2]+spt[3]);
+        
+        System.out.println(a+b);
     }
 }
