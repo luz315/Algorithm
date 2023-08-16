@@ -5,9 +5,9 @@ public class Main{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		long ab = Long.valueOf(st.nextToken() + st.nextToken());
-		long cd = Long.valueOf(st.nextToken() + st.nextToken());
+		long a = Long.valueOf(st.nextToken() + st.nextToken());
+		long b = Long.valueOf(st.nextToken() + st.nextToken());
         
-		System.out.println(ab + cd);
+		System.out.println(a + b);
     }
 }
