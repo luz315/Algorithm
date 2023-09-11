@@ -14,7 +14,7 @@
 |4|브루트 포스|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B4%5D%20%EB%B8%8C%EB%A3%A8%ED%8A%B8%20%ED%8F%AC%EC%8A%A4)|
 |5|그래프|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B5%5D%20%EA%B7%B8%EB%9E%98%ED%94%84)|
 |6|트리|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B6%5D%20%ED%8A%B8%EB%A6%AC)|
-|7|DFS & BFS[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B7%5D%20DFS%20%26%20BFS)|
+|7|DFS & BFS|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B7%5D%20DFS%20%26%20BFS)|
 
 
 <br/> 
