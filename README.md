@@ -1,5 +1,5 @@
 ## ✏️ Algorithm 
-###  1. 백준 : 백준 온라인 강의 알고리즘 기초편 순서
+###  1. 백준 : 백준 온라인 강의 알고리즘 기초편 + solved.ac - [태그] 문제
 ###  2. 프로그래머스 : Lv.1 ~ Lv.3 사이의 랜덤 알고리즘
 
 <br/> <br/> 
@@ -8,12 +8,13 @@
 ## 🥕 백준 목차
 |순번|이름|풀이|
 |:-:|:--------------------:|:---------------:|
-|1|자료구조|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B1%5D%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)|
-|2|수학|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B2%5D%20%EC%88%98%ED%95%99)|
-|3|DP|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B3%5DDP)|
-|4|브루트 포스|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B4%5D%20%EB%B8%8C%EB%A3%A8%ED%8A%B8%20%ED%8F%AC%EC%8A%A4)|
-|5|그래프|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B5%5D%20%EA%B7%B8%EB%9E%98%ED%94%84)|
-|6|BFS & 트리|[바로가기](https://luz315.tistory.com/category/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88/%5B6%5D%20BFS%20%26%20%ED%8A%B8%EB%A6%AC)|
+|1|자료구조|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B1%5D%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)|
+|2|수학|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B2%5D%20%EC%88%98%ED%95%99)|
+|3|DP|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B3%5D%20DP)|
+|4|브루트 포스|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B4%5D%20%EB%B8%8C%EB%A3%A8%ED%8A%B8%20%ED%8F%AC%EC%8A%A4)|
+|5|그래프|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B5%5D%20%EA%B7%B8%EB%9E%98%ED%94%84)|
+|6|트리|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B6%5D%20%ED%8A%B8%EB%A6%AC)|
+|7|DFS & BFS[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B7%5D%20DFS%20%26%20BFS)|
 
 
 <br/> 
@@ -71,6 +72,69 @@
 |9|2193|19|9465|
 |10|11053|20|2156|
 
+### 4) 브루트포스
+
+|순번|문제번호|순번|문제번호|
+|:-:|:--------------------:|:-:|:--------------------:|
+|1||11||
+|2||12||
+|3||13||
+|4||14||
+|5||15||
+|6||16||
+|7||17||
+|8||18||
+|9||19||
+|10||20||
+
+### 5) 그래프 
+
+|순번|문제번호|순번|문제번호|
+|:-:|:--------------------:|:-:|:--------------------:|
+|1||11||
+|2||12||
+|3||13||
+|4||14||
+|5||15||
+|6||16||
+|7||17||
+|8||18||
+|9||19||
+|10||20||
+
+
+### 6) 트리
+
+
+|순번|문제번호|순번|문제번호|
+|:-:|:--------------------:|:-:|:--------------------:|
+|1||11||
+|2||12||
+|3||13||
+|4||14||
+|5||15||
+|6||16||
+|7||17||
+|8||18||
+|9||19||
+|10||20||
+
+
+### 7) DFS & BFS
+
+|순번|문제번호|순번|문제번호|순번|문제번호|    
+|:-:|:--------------------:|:-:|:--------------------:|:-:|:--------------------:|
+|1|2606|11||21||
+|2|1012|12||22||
+|3|7562|13||23||
+|4||14||24||
+|5||15||25||
+|6||16||26||
+|7||17|||27||
+|8||18||
+|9||19||
+|10||20||
+
 
 
 
@@ -80,9 +144,9 @@
 ## 🥕 프로그래머스 목차
 |순번|이름|풀이|
 |:-:|:--------------------:|:---------------:|
-|1|Lv.1|[바로가기](https://luz315.tistory.com/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Lv.1)|
-|2|Lv.2|[바로가기](https://luz315.tistory.com/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Lv.2)|
-|3|Lv.3|[바로가기](https://luz315.tistory.com/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Lv.3)|
+|1|Lv.1|[바로가기](https://luz315.tistory.com/category/Programmers/Lv.1)|
+|2|Lv.2|[바로가기](https://luz315.tistory.com/category/Programmers/Lv.2)|
+|3|Lv.3|[바로가기](https://luz315.tistory.com/category/Programmers/Lv.3)|
 
 <br/> 
 
