@@ -15,7 +15,7 @@ public class Main{
         T=Integer.parseInt(br.readLine());
        
    
-       while(T-->0){
+        for(int i=1; i<T+1; i++){
             size=Integer.parseInt(br.readLine());
             arr=new int[size][size];
             visit= new boolean[size][size];
@@ -28,7 +28,10 @@ public class Main{
             y1=Integer.parseInt(st.nextToken());
             
             bfs();
-        } 
+            
+         System.out.println(arr[x1][y1]);    
+        }
+               
     }
     
     static void bfs(){
@@ -53,7 +56,7 @@ public class Main{
                 }
             }
         }
-         System.out.println(arr[x1][y1]); 
+        
         
     }
 }
