@@ -2,66 +2,70 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-    static String[][] MIRO;
+    static String[][] arr;
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0 , -1, 1};
     
     public int solution(String[] maps) {
-        MIRO = new String[maps.length][maps[0].length()];
+       
         int[] start = new int[2];
         int[] labor = new int[2];
         
-        for(int i = 0; i<maps.length; i++) {
-            String[] tmp = maps[i].split("");
+        arr = new String[maps.length][maps[0].length()];
             
-            for(int j = 0; j<tmp.length; j++) {
-                MIRO[i][j] = tmp[j];
+        for(int i = 0; i<maps.length; i++) {
+            String[] mark = maps[i].split("");
+            
+            for(int j =0; j<mark.length; j++){
+           
+                arr[i][j] = mark[j];
                 
-                if (MIRO[i][j].equals("S")) {
+                if (arr[i][j].equals("S")) {
                     start = new int[]{i, j};
                 }
     
-                if (MIRO[i][j].equals("L")) {
+                if (arr[i][j].equals("L")) {
                     labor = new int[]{i, j};
-                }
+                }              
             }
         }
         
         int result = bfs(start, "L");
         int result2 = bfs(labor, "E");
         
-        if (result == -1 || result2 == -1)
-            return -1;
-        
+        if (result == -1 || result2 == -1){
+           return -1;
+           
+        }
         return result + result2;
     }
     
-    public int bfs(int[] start, String target) {
-        Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[]{start[0], start[1], 0});
-        
-        boolean[][] visited = new boolean[MIRO.length][MIRO[0].length];
     
-        while(!queue.isEmpty()) {
-            int x = queue.peek()[0];
-            int y = queue.peek()[1];
-            int count = queue.peek()[2];
-            visited[x][y] = true;
+    public int bfs(int start, String target) {
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{start[0], start[1], 0});
+        boolean[][] visit = new boolean[arr.length][arr[0].length];
+        
+   while(!q.isEmpty()) {
+            int x = q.peek()[0];
+            int y = q.peek()[1];
+            int count = q.peek()[2];
+            visit[x][y] = true;
             
-            if (MIRO[x][y].equals(target)) {
+            if (arr[x][y].equals(target)) {
                 return count;
             }
             
-            queue.poll();
+            q.poll();
         
             for(int i = 0; i<4; i++) {
                 int nx = x + dx[i];
                 int ny = y + dy[i];
             
-                if (nx >= 0 && nx < MIRO.length && ny >= 0 && ny < MIRO[0].length && !visited[nx][ny]) {
-                    if (!MIRO[nx][ny].equals("X")) {
-                        visited[nx][ny] = true;
-                        queue.add(new int[]{nx, ny, count+1});
+                if (nx >= 0 && nx < arr.length && ny >= 0 && ny < arr[0].length && !visit[nx][ny]) {
+                    if (!arr[nx][ny].equals("X")) {
+                        visit[nx][ny] = true;
+                        q.add(new int[]{nx, ny, count+1});
                     }
                 }
             }
