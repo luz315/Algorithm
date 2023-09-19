@@ -1,76 +1,79 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 class Solution {
-    static String[][] arr;
+    static char[][] arr;
+    static boolean[][] visit;
     static int[] dx = {-1, 1, 0, 0};
-    static int[] dy = {0, 0 , -1, 1};
-    
+    static int[] dy = {0, 0, -1, 1};
+
+
     public int solution(String[] maps) {
-       
+        int h = maps.length;
+        int w = maps[0].length();
+
         int[] start = new int[2];
-        int[] labor = new int[2];
-        
-        arr = new String[maps.length][maps[0].length()];
-            
-        for(int i = 0; i<maps.length; i++) {
-            String[] mark = maps[i].split("");
-            
-            for(int j =0; j<mark.length; j++){
-           
-                arr[i][j] = mark[j];
-                
-                if (arr[i][j].equals("S")) {
-                    start = new int[]{i, j};
+        int[] lever = new int[2];
+        int[] end = new int[2];
+
+        arr = new char[h][w];
+
+        for(int i = 0; i<h; i++) {
+            for(int j =0; j<w; j++){
+
+                arr[i][j] = maps[i].charAt(j);
+                visit = new boolean[h][w];
+
+                if (arr[i][j]=='S') {
+                    start = new int[]{i,j};
                 }
-    
-                if (arr[i][j].equals("L")) {
-                    labor = new int[]{i, j};
-                }              
+
+                if (arr[i][j]=='L') {
+                    lever = new int[]{i,j};
+                }     
+
+                if (arr[i][j]=='E') {
+                    end = new int[]{i,j};
+                }     
             }
         }
+
+        int Midpoint = bfs(start,lever);
+        visit = new boolean[h][w];
         
-        int result = bfs(start, "L");
-        int result2 = bfs(labor, "E");
-        
-        if (result == -1 || result2 == -1){
+        int Endpoint = bfs(lever,end);
+
+        if (Midpoint == 0 || Endpoint == 0){
            return -1;
-           
         }
-        return result + result2;
+
+        return Midpoint + Endpoint;
     }
-    
-    
-    public int bfs(int start, String target) {
+
+
+    public int bfs(int[] node1, int[] node2) {
         Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{start[0], start[1], 0});
-        boolean[][] visit = new boolean[arr.length][arr[0].length];
         
-   while(!q.isEmpty()) {
-            int x = q.peek()[0];
-            int y = q.peek()[1];
-            int count = q.peek()[2];
-            visit[x][y] = true;
-            
-            if (arr[x][y].equals(target)) {
-                return count;
-            }
-            
-            q.poll();
-        
-            for(int i = 0; i<4; i++) {
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-            
-                if (nx >= 0 && nx < arr.length && ny >= 0 && ny < arr[0].length && !visit[nx][ny]) {
-                    if (!arr[nx][ny].equals("X")) {
-                        visit[nx][ny] = true;
-                        q.add(new int[]{nx, ny, count+1});
-                    }
-                }
-            }
+        q.add(new int[]{node1[0], node1[1], 0});
+
+        while(!q.isEmpty()) {
+              int[] p = q.poll();
+              visit[p[0]][p[1]] = true;
+
+              for(int i = 0; i<4; i++) {
+                  int nx = p[0] + dx[i];
+                  int ny = p[1] + dy[i];
+
+                   if(nx>=0 && nx<arr.length && ny>=0 && ny<arr[0].length && arr[nx][ny]!='X' && !visit[nx][ny]){
+                    visit[nx][ny]=true; 
+                    q.add(new int[]{nx, ny, p[2]+1});
+
+                   }
+              }
+
+              if(p[0]==node2[0] && p[1]==node2[1]) {
+                  return p[2];
+              } 
         }
-        
-        return -1;
+        return 0;
     }
 }
