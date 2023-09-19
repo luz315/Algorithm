@@ -1,10 +1,10 @@
 # [unrated] 미로 탈출 - 159993 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/159993) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/159993#qna) 
 
 ### 성능 요약
 
-메모리: 74.6 MB, 시간: 0.16 ms
+메모리: 73.3 MB, 시간: 0.21 ms
 
 ### 구분
 

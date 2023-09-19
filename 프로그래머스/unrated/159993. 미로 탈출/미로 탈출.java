@@ -8,20 +8,20 @@ class Solution {
 
 
     public int solution(String[] maps) {
-        int h = maps.length;
-        int w = maps[0].length();
+        int a = maps.length;
+        int b = maps[0].length();
 
         int[] start = new int[2];
         int[] lever = new int[2];
         int[] end = new int[2];
 
-        arr = new char[h][w];
+        arr = new char[a][b];
+        visit = new boolean[a][b];
 
-        for(int i = 0; i<h; i++) {
-            for(int j =0; j<w; j++){
+        for(int i = 0; i<a; i++) {
+            for(int j =0; j<b; j++){
 
                 arr[i][j] = maps[i].charAt(j);
-                visit = new boolean[h][w];
 
                 if (arr[i][j]=='S') {
                     start = new int[]{i,j};
@@ -38,7 +38,7 @@ class Solution {
         }
 
         int Midpoint = bfs(start,lever);
-        visit = new boolean[h][w];
+        visit = new boolean[a][b];
         
         int Endpoint = bfs(lever,end);
 
