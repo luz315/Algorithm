@@ -16,7 +16,7 @@
 |6|DFS & BFS|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B7%5D%20DFS%20%26%20BFS)|
 |7|기타|[바로가기](https://luz315.tistory.com/category/Baekjoon/%5B8%5D%20%EA%B8%B0%ED%83%80)|
 
-### 📌풀이를 보려면 ✨바로가기 클릭!!✨
+#### 📌풀이를 보려면 ✨바로가기 클릭!!✨
 
 <br/> 
   
