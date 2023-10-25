@@ -3,45 +3,41 @@ import java.io.*;
 
 public class Main {
 
-    static int N,d,k,c,sushi[],eating[];
+    static int N,d,k,c,arr[],eat[];
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		 N = Integer.parseInt(st.nextToken()); // 접시의 수
-		 d = Integer.parseInt(st.nextToken()); // 초밥의 가짓수
-		 k = Integer.parseInt(st.nextToken()); // 연속해서 먹는 접시의 수
-		 c = Integer.parseInt(st.nextToken()); // 쿠폰 번호
-		 sushi = new int[N];
-		 eating = new int[d+1]; // 먹은 초밥 
+		 N = Integer.parseInt(st.nextToken()); 
+		 d = Integer.parseInt(st.nextToken()); 
+		 k = Integer.parseInt(st.nextToken()); 
+		 c = Integer.parseInt(st.nextToken()); 
+		 arr = new int[N];
+		 eat = new int[d+1]; 
 		
 		for(int i=0; i<N; i++) {
-			sushi[i] = Integer.parseInt(br.readLine());
+			arr[i] = Integer.parseInt(br.readLine());
 		}
 		System.out.println(slide());
     }
         
         private static int slide() {
-		// 회전하지 않았을 때 경우
-        eating[c] = 3001;
-		int count = 1;
+        eat[c] = 3001;
+		int type = 1;
 		for(int i=0; i<k; i++) {
-			if(eating[sushi[i]] <= 0) count ++;
-			eating[sushi[i]] ++;
+			if(eat[arr[i]] <= 0) type ++;
+			eat[arr[i]] ++;
 		}
 		
-		int max = count;
-		for(int i=0; i<N-1; i++) {
-			// i ~ i+k-1 == start ~ end-1
-			int start = i;
-			int end = i+k >= N ? (i+k)%N : i+k;
+		int max = type;
+		for(int i=0; i<N; i++) {
 			
-			// start 뺐는데 갯수가 0이하면 종류 하나 빼기
-			if(--eating[sushi[start]] == 0) count-- ;
-			// end 넣는데 갯수가 1개이면 종류 하나 추가
-			if(++eating[sushi[end]] == 1) count ++;
+			int end = (i+k)%N;
 			
-			max = Math.max(max, count);
+			if(--eat[arr[i]] == 0) type-- ;
+			if(eat[arr[end]]++ == 0) type ++;
+			
+			max = Math.max(max, type);
 		}
 		
 		return max;
