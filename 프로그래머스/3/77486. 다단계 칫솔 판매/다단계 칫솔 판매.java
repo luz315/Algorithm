@@ -27,8 +27,8 @@ class Solution {
             return;
         }
         
-        int mine =   (int)(Math.ceil(income*0.9));
-        int parents = income - mine;
+        int parents = income/10;
+        int mine =   income-parents;
         String next = recommand.get(name);
         map.replace(name,map.get(name)+mine);
         dfs(next,parents);
