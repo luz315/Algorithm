@@ -24,7 +24,7 @@ class Solution {
         }
         
         while(sum_q1 != sum_q2) {
-            if(answer > queue1.length * 2 + 1)
+            if(answer > queue1.length * 3)
                 return -1;
             
             int add_num = 0;
