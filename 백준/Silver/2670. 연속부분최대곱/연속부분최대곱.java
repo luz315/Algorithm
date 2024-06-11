@@ -8,8 +8,6 @@ public class Main{
         n = Integer.parseInt(br.readLine());
         double dp[] = new double[n];
         
-        double result = Double.MIN_VALUE;
-        
         for(int i=1; i<n; i++){
             dp[i] = Double.parseDouble(br.readLine());
             dp[i] = Math.max(dp[i],dp[i]*dp[i-1]);
