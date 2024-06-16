@@ -1,62 +1,60 @@
 import java.io.*;
 import java.util.*;
+import java.awt.*;
 public class Main{
-    static int T,size,x,y,x1,y1;
-    static int arr[][];
-    static boolean visit[][];
-    static int result=0;
     static int dx[] = {1, 2, 2, 1, -1, -2, -2, -1 };
     static int dy[] = {-2, -1, 1, 2, 2, 1, -1, -2 };
-    static Queue<int[]> q = new LinkedList<>();
+    static int count,I,A1,A2,B1,B2;
+    static boolean visit[][];
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
- 
-        T=Integer.parseInt(br.readLine());
-       
-   
-        for(int i=1; i<T+1; i++){
-            size=Integer.parseInt(br.readLine());
-            arr=new int[size][size];
-            visit= new boolean[size][size];
-            st= new StringTokenizer(br.readLine());
-            x=Integer.parseInt(st.nextToken());
-            y=Integer.parseInt(st.nextToken());
+        int T = Integer.parseInt(br.readLine());
+        
+        while(T-->0){
+            I = Integer.parseInt(br.readLine());
             
-            st= new StringTokenizer(br.readLine());
-            x1=Integer.parseInt(st.nextToken());
-            y1=Integer.parseInt(st.nextToken());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            A1 = Integer.parseInt(st.nextToken());
+            B1 = Integer.parseInt(st.nextToken());
             
-            bfs();
+            st = new StringTokenizer(br.readLine());
+            A2 = Integer.parseInt(st.nextToken());
+            B2 = Integer.parseInt(st.nextToken());
             
-         System.out.println(arr[x1][y1]);    
+            visit = new boolean[I][I];
+        
+            System.out.println(bfs(A1,B1));
         }
-               
+        
     }
     
-    static void bfs(){
-        q.add(new int[]{x,y});
-        visit[x][y]= true;
+    static int bfs(int x, int y){
+       
+        Queue <Point> q = new LinkedList<>();
+        q.add(new Point(x,y));
+        visit[x][y]=true;
+        count =0;
         
         while(!q.isEmpty()){
-            int[] now = q.poll();
-            int nx=now[0];
-            int ny=now[1];
-            
-            for(int i =0; i<8;i++){
-                int ox = nx+dx[i];
-                int oy = ny+dy[i];
-                
-                if(ox>=0 && oy>=0 && ox < size && oy <size){
-                    if(!visit[ox][oy]){
-                        q.add(new int[]{ox,oy});
-                        arr[ox][oy] = arr[nx][ny] +1;
-                        visit[ox][oy] =true;
+            int size = q.size();
+            for(int j=0;j<size;j++){
+                 Point p = q.poll();
+                if(p.x==A2&&p.y==B2){
+                    return count;
+                }
+                for(int i=0; i<8;i++){
+                    int nextx=p.x+dx[i];
+                    int nexty=p.y+dy[i];
+                    if(0<=nextx&&nextx<I && 0<=nexty&&nexty<I && !visit[nextx][nexty]){
+                        q.add(new Point(nextx,nexty));
+                        visit[nextx][nexty]=true;
                     }
                 }
             }
+            count++;
         }
-        
-        
+        return count;
     }
 }
+    
+    
