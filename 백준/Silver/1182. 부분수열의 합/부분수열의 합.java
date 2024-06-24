@@ -15,27 +15,21 @@ public class Main{
             arr[i]= Integer.parseInt(st.nextToken());
         }
         
-        
-        dfs(0,0);
-        
-        if(S==0){
-            System.out.println(count-1);
+        for(int i=0;i<N;i++){
+            dfs(i,arr[i]);
         }
-        else{
-            System.out.println(count);
-        }
+        
+        
+        System.out.println(count);
+        
     }
     static void dfs(int start, int sum){
-        if(start==N){
-            if(sum==S){
-                count++;
-            }
-            return;
+        if(sum==S){
+              count++;
         }
         
-        int next = start+1;
-        
-        dfs(next,sum+arr[start]);
-        dfs(next,sum);
+        for(int next=start+1; next<N; next++){
+            dfs(next,sum+arr[next]);
+        }
     }
 }
