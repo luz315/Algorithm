@@ -6,7 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         int dp[] = new int[N + 1];
-        int INF = Integer.MAX_VALUE / 2;
+        int INF = Integer.MAX_VALUE;
 
         Arrays.fill(dp, INF);
 
