@@ -1,69 +1,74 @@
 import java.io.*;
 import java.util.*;
 public class Main{
-    static int N;
-    static String s;
-    static int dx[] = {0,0,1,-1};
-    static int dy[] = {1,-1,0,0};
-    static char arr[][];
+    static int dx[]={0,0,1,-1};
+    static int dy[]={1,-1,0,0};
     static boolean visit[][];
+    static int N;
+    static char arr[][];
+    
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+        arr = new char[N][N];
         
-        N=Integer.parseInt(br.readLine());
-        arr= new char[N][N];
-        visit= new boolean[N][N];
-        int Acount =0;
-        int Bcount=0;
-      
-        for(int i =0; i<N; i++){
-            s=br.readLine();
-            for(int j=0; j<N; j++){
-                arr[i][j]=s.charAt(j);
-            }
+        visit = new boolean[N][N];
+        for(int i=0;i<N;i++){
+            arr[i] = br.readLine().toCharArray();
         }
         
-        for(int i =0; i<N; i++){
-            for(int j =0; j<N;j++){
+        int normal=0;
+        
+        for(int i =0; i<N;i++){
+            for(int j=0;j<N;j++){
                 if(!visit[i][j]){
-                    dfs(i,j);
-                    Acount++;
+                    bfs(i,j);
+                    normal++;
                 }
             }
         }
-        
-        for(int i=0; i<N;i++){
-            for(int j =0; j<N;j++){
+    
+    
+        visit = new boolean[N][N];
+        for(int i=0;i<N;i++){
+            for(int j=0;j<N;j++){
                 if(arr[i][j]=='G'){
                     arr[i][j]='R';
                 }
             }
         }
         
-        visit= new boolean[N][N];
-        
-        for(int i =0; i<N; i++){
-            for(int j =0; j<N;j++){
+       
+        int blind=0;
+        for(int i =0; i<N;i++){
+            for(int j=0;j<N;j++){
                 if(!visit[i][j]){
-                    dfs(i,j);
-                    Bcount++;
+                    bfs(i,j);
+                    blind ++;
                 }
             }
         }
         
-        System.out.println(Acount+" "+Bcount);
+        System.out.println(normal);
+        System.out.println(blind);
     }
     
-    public static void dfs(int x, int y){
-        visit[x][y] = true;
+    static void bfs(int x, int y){
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{x,y});
+        visit[x][y]=true;
         char color = arr[x][y];
         
-        for(int i=0;i<4;i++){
-            int nx = x+dx[i];
-            int ny = y+dy[i];
-            if(0<=nx&&nx<N && 0<=ny&&ny<N && !visit[nx][ny]){
-                if(arr[nx][ny]==color){
-                    dfs(nx,ny);
+        while(!q.isEmpty()){
+            int p[] = q.poll();
+            for(int i =0; i<4;i++){
+                int nx = p[0]+dx[i];
+                int ny = p[1]+dy[i];
+                if(0<=nx&&nx<N && 0<=ny&&ny<N && !visit[nx][ny]){
+                    if(arr[nx][ny]==color){
+                        visit[nx][ny]=true;
+                        q.add(new int[]{nx,ny});
+                    }
                 }
             }
         }
